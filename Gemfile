@@ -103,3 +103,7 @@ end
 gem 'jquery-easing-rails'
 gem 'bourbon', '4.2.7'
 
+# for calendar
+gem "simple_calendar", "~> 2.0"
+
+
