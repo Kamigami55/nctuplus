@@ -79,6 +79,8 @@ end
 	get "user/select_cs_cf"
 	get "user/select_cm"
 	post "user/select_cm"
+
+	get "user/calendar"
 	
 #---------- scores -----------
 	post "scores/import"
