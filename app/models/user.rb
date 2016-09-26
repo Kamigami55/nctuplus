@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
   
   has_many :bulletins
 
+  has_many :user_events # 課程行事曆行程
+
 
   #validates :email, uniqueness: true
   validates :name, :length=> { :maximum=> 16, :message=>"姓名過長(max:16)" }, :on => :update #:uniqueness=>true,

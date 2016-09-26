@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903072145) do
+ActiveRecord::Schema.define(version: 20160925062602) do
 
   create_table "agreed_scores", force: true do |t|
     t.integer "user_id",         default: 0,    null: false
@@ -416,6 +416,23 @@ ActiveRecord::Schema.define(version: 20160903072145) do
     t.datetime "updated_at"
   end
 
+  create_table "members", force: true do |t|
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "job"
+    t.string   "department"
+    t.string   "motivation"
+    t.string   "others"
+    t.string   "fb"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "member_image_file_name"
+    t.string   "member_image_content_type"
+    t.integer  "member_image_file_size"
+    t.datetime "member_image_updated_at"
+  end
+
   create_table "normal_scores", force: true do |t|
     t.integer "user_id",          default: 0,  null: false
     t.integer "course_detail_id", default: 0,  null: false
@@ -498,6 +515,15 @@ ActiveRecord::Schema.define(version: 20160903072145) do
 
   add_index "user_coursemapships", ["course_map_id"], name: "index_user_coursemapships_on_course_map_id", using: :btree
   add_index "user_coursemapships", ["user_id"], name: "index_user_coursemapships_on_user_id", using: :btree
+
+  create_table "user_events", force: true do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
