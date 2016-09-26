@@ -1,6 +1,33 @@
 <%= render 'link_bar' %>
 
-<%= month_calendar do |date| %>
-	<%= date.day %>
-<% end %>
+<div class="col-md-4 bg-white">
+	<h1>Events</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Start-time</th>
+			<th>End-time</th>
+		</tr>
+		<% @events.each do |event| %>
+			<tr>
+				<td><%= event.name %></td>
+				<td><%= event.start_time %></td>
+				<td><%= event.end_time %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<div class="col-md-8 bg-white">
+	<%= month_calendar events: @events do |date, events| %>
+		<%= date.day %>
+
+		<% events.each do |event| %>
+			<div>
+				<%= event.name %>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
 

@@ -331,6 +331,11 @@ class UserController < ApplicationController
 	def collections
 	  @collections = current_user.user_collections
 	end
+
+	def calendar
+		user=getUserByIdForManager(params[:uid])
+		@events=user.user_events
+	end
 	
 private
 
