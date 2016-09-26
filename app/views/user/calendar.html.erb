@@ -7,12 +7,14 @@
 			<th>Name</th>
 			<th>Start-time</th>
 			<th>End-time</th>
+			<th>show</td>
 		</tr>
 		<% @events.each do |event| %>
 			<tr>
 				<td><%= event.name %></td>
 				<td><%= event.start_time %></td>
 				<td><%= event.end_time %></td>
+				<td><%= link_to 'show', controller: 'user', action: 'cal_event_show', id: event.id %></td>
 			</tr>
 		<% end %>
 	</table>
@@ -24,7 +26,9 @@
 
 		<% events.each do |event| %>
 			<div>
-				<%= event.name %>
+				<%= link_to controller: 'user', action: 'cal_event_show', id: event.id do %>
+					<%= event.name %>
+				<% end %>
 			</div>
 		<% end %>
 	<% end %>

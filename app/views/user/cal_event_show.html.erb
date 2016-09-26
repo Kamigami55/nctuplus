@@ -1,0 +1,19 @@
+<%= render 'link_bar' %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cal_event.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @cal_event.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @cal_event.end_time %>
+</p>
+
+<%= link_to 'Edit', '#' %> |
+<%= link_to 'Back', '/user/calendar' %>

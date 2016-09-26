@@ -336,6 +336,11 @@ class UserController < ApplicationController
 		user=getUserByIdForManager(params[:uid])
 		@events=user.user_events
 	end
+
+	def cal_event_show
+		user=getUserByIdForManager(params[:uid])
+		@cal_event=user.user_events.find(params[:id])
+	end
 	
 private
 

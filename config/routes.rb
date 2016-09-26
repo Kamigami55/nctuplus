@@ -81,6 +81,13 @@ end
 	post "user/select_cm"
 
 	get "user/calendar"
+		#resources user_events, :controller => "user"
+	#end
+	get "user/calendar/events/:id" => "user#cal_event_show"
+
+	#resource :calendar, :controller => "user" do
+		#resources :user_events, :controller => "user"
+	#end
 	
 #---------- scores -----------
 	post "scores/import"
