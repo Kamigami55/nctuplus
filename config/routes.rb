@@ -152,7 +152,9 @@ end
 
 	resources :departments, :except=>[:show, :destroy]
 
- 
+
+#---------- video ----------
+	get "video", to: "main#video"
 
 	
 #---------- book page ----------- 
